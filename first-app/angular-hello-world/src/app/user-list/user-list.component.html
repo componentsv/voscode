@@ -1,5 +1,6 @@
 <ul>
   <li *ngFor="let name of names">
-    <app-user-item></app-user-item>
+    <!-- pass a value to the input named [name] on app-user-item component.-->
+    <app-user-item [name]="name"></app-user-item>
   </li>
 </ul>
