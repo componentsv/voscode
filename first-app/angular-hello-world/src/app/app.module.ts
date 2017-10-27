@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { UserItemComponent } from './user-item/user-item.component';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserItemComponent
+    UserItemComponent,
+    HelloWorldComponent
   ],
   imports: [
     BrowserModule
