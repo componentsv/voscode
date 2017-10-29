@@ -8,24 +8,23 @@ import { Article } from './article.model';
 })
 export class ArticleComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'row';
-  votes: number;
-  title: string;
-  link: string;
+  article: Article;
 
   constructor() {
-    this.title = 'anonymoussc';
-    this.link = 'http://anonymoussc.github.io/';
-    this.votes = 10;
+    this.article = new Article(
+      'anonymoussc',
+      'http://anonymoussc.github.io/',
+      10);
   }
 
   voteUp() {
-    this.votes += 1;
+    this.article.votes += 1;
 
     return false;
   }
 
   voteDown() {
-    this.votes -= 1;
+    this.article.votes -= 1;
 
     return false;
   }
