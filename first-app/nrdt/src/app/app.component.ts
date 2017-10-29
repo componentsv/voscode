@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Article } from './article/article.model'; // <-- import this
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
-    console.log(`Adding article title: ${title.value} and link: ${link.value}`);
-    return false;
+  articles: Article[]; // <-- component property
+
+  constructor() {
+    this.articles = [
+      new Article('anonymoussc1', 'https://rn.netlify.com/', 3),
+      new Article('anonymoussc2', 'http://anonymoussc.github.io/', 2),
+      new Article('Angular Homepage', 'http://angular.io', 1),
+    ];
   }
 }
